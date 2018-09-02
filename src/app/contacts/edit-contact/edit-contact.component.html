@@ -1,0 +1,56 @@
+
+<div class="container" fxLayout fxLayoutAlign="center">
+
+  <form [formGroup]="form" (submit)="onUpdateContact()" fxLayout  fxLayout.sm="column" fxLayout.xs="column" fxFlex>  
+
+    <span fxLayout="column" fxFlex="40">  
+
+      <img [src]="imagePreview" width="170px" style="align-self: center" (click)="filePicker.click()">
+      <input type="file" #filePicker (change)="onImagePicked($event)">
+
+      <mat-form-field>
+        <input matInput placeholder="First Name" formControlName="fname">
+        <mat-error *ngIf="form.get('fname').invalid">Please enter a first name</mat-error>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <input matInput placeholder="Last Name" formControlName="lname">
+        <mat-error *ngIf="form.get('lname').invalid">Please enter a last name</mat-error>
+      </mat-form-field>
+
+    </span>
+
+    <span fxLayout="column" fxFlex="60"> 
+
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email" (focusout)="getEnrichApi()">
+        <mat-error *ngIf="form.get('email').invalid">Please enter an email</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Phone Number" formControlName="phone">
+        <mat-error *ngIf="form.get('phone').invalid">Please enter a phone number</mat-error>
+      </mat-form-field><br>
+      
+      <mat-form-field disabled="true">
+        <input matInput placeholder="Organization" formControlName="org">
+        <mat-error *ngIf="form.get('org').invalid">Please enter a organization</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title">
+        <mat-error *ngIf="form.get('title').invalid">Please enter a job title</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Description" formControlName="desc">
+        <mat-error *ngIf="form.get('desc').invalid">Please enter a description</mat-error>
+      </mat-form-field>
+
+      <br><br>
+      <button mat-flat-button color="primary" type="submit">Update Contact</button>
+
+    </span>
+  </form>
+</div>

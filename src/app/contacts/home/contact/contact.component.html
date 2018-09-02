@@ -1,0 +1,24 @@
+<div class="container" fxLayoutAlign="space-between none" fxLayout fxLayout.sm="column" fxLayout.xs="column" fxLayout="row wrap">
+
+          <mat-card fxFlex="24" *ngFor="let contact of contacts | paginate: {itemsPerPage: 8, currentPage: p }; let i = index" [style.minHeight]="'100%'"> 
+            <mat-card-header>
+              <img mat-card-avatar class="header-image" [src]="contact.image">
+              <mat-card-title>{{contact.fname}} {{contact.lname}}</mat-card-title>
+              <mat-card-subtitle>{{contact.title}}</mat-card-subtitle>
+            </mat-card-header>
+
+            <img mat-card-image [src]="contact.image">
+
+            <mat-card-content>
+              <p>
+                  {{contact.desc}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <a mat-flat-button color="primary" [routerLink]="['/edit', contact._id]" *ngIf="userIsAuthenticated">Edit</a>&nbsp;
+                <a mat-flat-button color="warn" (click)="delete_contact(contact._id);" *ngIf="userIsAuthenticated">Delete</a>
+            </mat-card-actions>
+          </mat-card>
+</div>  
+
+<div class="paginator"><pagination-controls (pageChange) = "p = $event"></pagination-controls></div>

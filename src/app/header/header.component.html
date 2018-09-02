@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" flex>
+  <mat-toolbar-row>
+      <span><a routerLink="/">Contact Management</a></span>
+      <span class="spacer"></span>
+      <ul>
+          <li>
+              <a mat-button routerLink="/add" routerLinkActive="mat-warn" *ngIf="userIsAuthenticated">Create Contact</a>
+            </li>
+          <li>
+            <a mat-button routerLink="/login" routerLinkActive="mat-warn" *ngIf="!userIsAuthenticated">Login</a>
+          </li>
+          <li>
+            <a mat-button routerLink="/signup" routerLinkActive="mat-warn" *ngIf="!userIsAuthenticated">Signup</a>
+          </li>
+          <li>
+            <a mat-button (click)="onLogout()" *ngIf="userIsAuthenticated">Logout</a>
+          </li>
+      </ul>
+    </mat-toolbar-row>
+</mat-toolbar>

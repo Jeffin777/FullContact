@@ -1,0 +1,10 @@
+
+<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+  
+    <mat-form-field fxFlex="calc3Cols" class="search-bar">
+      <input matInput placeholder="Search Contacts" #search>
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" class="search-button" (click)="onSearch(search.value)">Search</button>
+
+</div>

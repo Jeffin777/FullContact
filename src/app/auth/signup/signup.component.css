@@ -1,0 +1,15 @@
+ 
+  .container {
+    max-width: 420px;
+    padding: 60px 30px;
+    border-radius:9px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(36, 76, 253);
+    margin: 50px auto;
+    flex-direction: column;
+  }
+ 
+  .container > * {
+    width: 100%;
+  }

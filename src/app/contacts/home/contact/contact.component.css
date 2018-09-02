@@ -1,0 +1,17 @@
+
+  mat-card {
+    margin-bottom:  10px;
+  }
+
+  a {
+    margin-bottom: 10px;
+  }
+
+  .paginator {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .header-image {
+    background-size: contain;
+  }

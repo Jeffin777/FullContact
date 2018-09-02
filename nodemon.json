@@ -1,0 +1,7 @@
+{
+  "env": {
+    "MONGO_ATLAS_PW": "Fn0rIbTb9IbSwOXw",
+    "ENRICH_API": "zY1dz1v4wlFBtHFKhAAtHXde9Zi50tyk",
+    "JWT_KEY": "Full_Contact_Sample_App"
+  }
+}
