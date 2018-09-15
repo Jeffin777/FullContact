@@ -51,13 +51,13 @@ export class AuthService {
 
   onsite_login(email: string, password: string){
     const authData: User = {email: email, password: password};
-    this.http.post<{token: string, userID: string}>(
+    this.http.post<{token: string, userId: string}>(
       BACKEND_URL + "/login", authData).subscribe(
       response=> {
         if(response.token){
           this.isAuthenticated = true;
           this.token = response.token;
-          this.userID = response.userID;
+          this.userID = response.userId;
           this.authStatusListener.next(true);
           this.saveAuthData(this.token,this.userID);
           this.router.navigate(["/"]);

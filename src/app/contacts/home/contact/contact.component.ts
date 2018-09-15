@@ -12,6 +12,8 @@ import { ContactService } from '../../contact.service';
 })
 export class ContactComponent implements OnInit {
 
+  p: number = 1;
+  userID: string = '';
   contacts: Contact[] = [];
   userIsAuthenticated = false;
   private contactsSub: Subscription;
@@ -21,6 +23,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     this.userIsAuthenticated = this.authService.getIsAuth();
+    this.userID = this.authService.getUserId();
     this.authListenerSubs = this.authService
       .getAuthStatusListener()
       .subscribe(isAuthenticated => {

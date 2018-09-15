@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUserUrl: "http://localhost:3000/auth/api/user",
-  apiContactUrl: "http://localhost:3000/auth/api/contact"
+  apiUserUrl: "https://full-contact-2018.herokuapp.com/auth/api/user",
+  apiContactUrl: "https://full-contact-2018.herokuapp.com/auth/api/contact"
 };

@@ -4,7 +4,9 @@
             <mat-card-header>
               <img mat-card-avatar class="header-image" [src]="contact.image">
               <mat-card-title>{{contact.fname}} {{contact.lname}}</mat-card-title>
-              <mat-card-subtitle>{{contact.title}}</mat-card-subtitle>
+              <mat-card-subtitle>
+                <marquee _ngcontent-c8="" scrolldelay="250" width="100%">{{contact.title}}</marquee>
+              </mat-card-subtitle>
             </mat-card-header>
 
             <img mat-card-image [src]="contact.image">
@@ -15,8 +17,8 @@
               </p>
             </mat-card-content>
             <mat-card-actions>
-                <a mat-flat-button color="primary" [routerLink]="['/edit', contact._id]" *ngIf="userIsAuthenticated">Edit</a>&nbsp;
-                <a mat-flat-button color="warn" (click)="delete_contact(contact._id);" *ngIf="userIsAuthenticated">Delete</a>
+                <a mat-flat-button color="primary" [routerLink]="['/edit', contact._id]" *ngIf="contact.creator==userID">Edit</a>&nbsp;
+                <a mat-flat-button color="warn" (click)="delete_contact(contact._id);" *ngIf="contact.creator==userID">Delete</a>
             </mat-card-actions>
           </mat-card>
 </div>  
